@@ -35,6 +35,11 @@ def convertFile(fname):
 
 
 def filterStopWords(words):
+    """
+    convert various type of file to txt
+    @param words: list of words
+    @return: words without stopwords
+    """
     result = []
     with open(const.STOPWORDS_FILE, 'r') as stopwordsFile:
         lines = stopwordsFile.readlines()
@@ -46,10 +51,20 @@ def filterStopWords(words):
 
 
 def split2Centences(content):
+    """
+    split text content into list of sentences
+    @param content: text content
+    @return: list of sentences
+    """
     return re.split(r'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s', content)
 
 
 def split2Word(content):
+    """
+    split sentence into list of words and filter out stopwords
+    @param content: sentence
+    @return: list of words
+    """
     sentence = content.lower()
     words = re.findall(r'\'?[A-Za-z]+(?:\'[A-Za-z]+)*', sentence)
     return filterStopWords(words)
