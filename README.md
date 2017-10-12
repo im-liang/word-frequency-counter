@@ -1,6 +1,6 @@
-# Create Hashtags
+# Word Frequency Counter
 
-In the attached documents, find the most common occurring words, and the sentences where they are used to create a table:
+Find the most common occurring words, and the sentences where they are in.
 
 ### Prerequisites
 
@@ -17,7 +17,3 @@ brew install python
 ```
 pip install pypdf2
 ```
-
-## Further help
-
-Please email jieliang@cs.stonybrook.edu
