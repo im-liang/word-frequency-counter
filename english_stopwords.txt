@@ -76,6 +76,7 @@ differently
 do
 does
 done
+don't
 down
 down
 downed
@@ -160,6 +161,8 @@ his
 how
 however
 i
+i'll
+i've
 if
 important
 in
