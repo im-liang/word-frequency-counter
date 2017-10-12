@@ -1,6 +1,7 @@
 import PyPDF2
 import re
 import const
+import sys
 
 def convertPDF2TXT(fname):
     """
@@ -11,13 +12,10 @@ def convertPDF2TXT(fname):
     content = ''
     with open(fname, 'rb') as pdf_file:
         read_pdf = PyPDF2.PdfFileReader(pdf_file)
-        number_of_pages = read_pdf.getNumPages()
-        for page in pages:
-            content += page.extractText()
+        for i in range(0, read_pdf.getNumPages()):
+            pageObj = read_pdf.getPage(i)
+            content += pageObj.extractText()
     return content
-
-# def convertHTML2TXT(file):
-
 
 
 def convertFile(fname):
@@ -32,6 +30,9 @@ def convertFile(fname):
     elif fname.lower().endswith('.txt'):
         f = open(fname, 'r')
         return f.read()
+    else:
+        print const.FILE_TYPE_ERR_MSG
+        sys.exit()
 
 
 def filterStopWords(words):
