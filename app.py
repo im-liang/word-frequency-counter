@@ -9,7 +9,7 @@ def wordFrequency(fname):
     """
     Analysis of word usage for the file
     @param fname: file name
-    @return: word Frequency
+    @return: word frequency dict
     """
     counter = {}
     content = support.convertFile(fname)
@@ -25,6 +25,10 @@ def wordFrequency(fname):
 
 
 def mostFrequentWordinFile(counter):
+    """
+    print the most frequent word, frequency, and the sentences where they are used from single word frequency dict
+    @param counter: word Frequency dict
+    """
     max_count = 0
     result = {}
     for word in counter:
@@ -40,6 +44,10 @@ def mostFrequentWordinFile(counter):
 
 
 def mostFrequentWordinDir(counters):
+    """
+    print the most frequent word, frequency, and the sentences where they are used from multiple word frequency dict
+    @param counters: word Frequency dicts
+    """
     total_counter = {}
     for counter in counters:
         for word in counter:
